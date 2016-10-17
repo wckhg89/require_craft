@@ -1,7 +1,8 @@
 define(function () {
+  var name = '미네랄';
+  var type = '자원';
+
   var exports = {
-    name : '미네랄',
-    type : '자원',
     remain : 500
   }
 
