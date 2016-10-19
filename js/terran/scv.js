@@ -3,21 +3,24 @@ define([], function () {
   var type = '유닛';
 
   var exports = {
-    getMineral : function (mineral) {
+    getMineral : function (MineralModule) {
+      var mineral = MineralModule.getMineral();
       console.log('미네랄 캐는중...');
-      mineral.remain = mineral.remain + 8;
-      console.log('남은 미네랄 : ' + mineral.remain);
+      MineralModule.setMmineral(mineral + 8);
+      console.log('남은 미네랄 : ' + mineral);
     },
-    getGas : function (gas) {
+    getGas : function (GasModule) {
+      var gas = GasModule.getGas();
       console.log('가스 캐는중...');
-      gas.remain = gas.remain + 8;
+      GasModule.setGas(gas + 8)
       console.log('남은 가스 : ' + gas.remain);
     },
 
-    makeGasStation : function (mineral) {
+    makeGasStation : function (MineralModule) {
+      var mineral = MineralModule.getMineral();
       console.log('가스 스테이션 건설중...');
-      mineral.remain = mineral.remain - 50;
-      console.log('남은 미네랄 : ' + mineral.remain);
+      MineralModule.setMmineral(mineral - 50);
+      console.log('남은 미네랄 : ' + mineral);
       console.log('가스 스테이션 건설완료');
     }
   };

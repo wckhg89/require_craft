@@ -6,17 +6,17 @@ require.config({
   }
 });
 
-require(['terran/command_center', 'mineral'] , function (CommandCenter, mineral) {
+require(['terran/command_center', 'mineral', 'gas'] , function (CommandCenter, MineralModule, GasModule) {
   var scvs = [];
 
   for (var i = 0 ; i < 5 ; i++) {
-    var scv = CommandCenter.makeSCV(mineral);
+    var scv = CommandCenter.makeSCV(MineralModule);
     scvs.push(scv);
   }
 
   for (var j = 0 ; j < 4 ; j++) {
     scvs[j].SCV.getMineral(mineral);
   }
-
+s
   scvs[4].SCV.makeGasStation(mineral);
 });

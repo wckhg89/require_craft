@@ -7,14 +7,15 @@ define(['terran/scv'], function (SCV) {
   };
 
   var exports = {
-    makeSCV : function (mineral) {
-      if (mineral.remain >= 50) {
+    makeSCV : function (MineralModule) {
+      var mineral = MineralModule.getMineral();
+      if (mineral >= 50) {
         console.log('SCV 생산중...');
-        console.log('남은 미네랄 : ' + mineral.remain);
+        console.log('남은 미네랄 : ' + mineral));
         console.log('SCV 생산 완료');
-        mineral.remain = mineral.remain - 50;
+        MineralModule.setMineral(mineral - 50);
 
-        return new Scv(SCV); // 이렇게 리턴해주면 같은 객체를 참조하는 꼴임.
+        return new Scv(SCV);
       }
     }
   };

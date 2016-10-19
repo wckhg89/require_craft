@@ -1,9 +1,15 @@
 define(function () {
   var name = '가스';
   var type = '자원';
+  var remain = 100;
 
   var exports = {
-    remain : 100
+    getGas : function () {
+      return remain;
+    },
+    setGas : function (gas) {
+      remain = gas;
+    }
   }
 
   return exports;
